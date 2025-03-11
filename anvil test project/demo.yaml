@@ -1,0 +1,48 @@
+form:
+  name: MijnAnvilForm
+  properties:
+    title: "Mijn Anvil App"
+    background: "#f5f5f5"
+    align: center
+
+components:
+  - type: ColumnPanel
+    properties:
+      spacing: medium
+      align: center
+    children:
+      - type: Label
+        properties:
+          text: "Welkom bij mijn Anvil App"
+          bold: true
+          font_size: 24
+
+      - type: DataGrid
+        properties:
+          columns:
+            - title: "ID"
+              data_key: "id"
+            - title: "Naam"
+              data_key: "naam"
+            - title: "Leeftijd"
+              data_key: "leeftijd"
+        children:
+          - type: RepeatingPanel
+            properties:
+              item_template: "RowTemplate"
+
+      - type: FlowPanel
+        properties:
+          spacing: small
+          align: center
+        children:
+          - type: Button
+            properties:
+              text: "Toevoegen"
+              role: "primary-button"
+              align: left
+          - type: Button
+            properties:
+              text: "Verwijderen"
+              role: "secondary-button"
+              align: right

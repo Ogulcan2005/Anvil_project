@@ -1,0 +1,7 @@
+rich_text:
+  name: rich_text_editor
+  type: RichText
+  properties:
+    height: 300
+    placeholder: Type hier uw tekst...
+    font_size: 14 
