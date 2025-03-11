@@ -1,0 +1,40 @@
+components:
+- components:
+  - components:
+    - name: repeating_panel_1
+      properties: {item_template: MovieList.RowTemplate1}
+      type: RepeatingPanel
+    layout_properties: {grid_position: 'YEKWRP,THIMYH'}
+    name: data_grid_1
+    properties:
+      columns:
+      - {data_key: movie_name, id: JKSDUP, title: Movie Name}
+      - {data_key: director, id: VJQQOR, title: Director}
+      - {data_key: year, id: OJLQEN, title: Year}
+      - {data_key: column_1, id: LQKVGX, title: Column 1}
+      visible: true
+    type: DataGrid
+  - event_bindings: {click: add_movie_click}
+    layout_properties: {grid_position: 'WPHCIJ,SPZQAV'}
+    name: add_movie
+    properties:
+      text: |
+        Add Movie
+    type: Button
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
+- layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+- layout_properties: {slot: title}
+  name: outlined_1
+  properties: {role: outlined, text: My Favorite Movies}
+  type: TextBox
+container:
+  event_bindings: {}
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+is_package: true
