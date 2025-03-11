@@ -1,0 +1,12 @@
+# ... bestaande code ...
+flow:
+  # Hier komt uw bestaande MovieList content
+  
+rich_text:
+  name: rich_text_1
+  type: RichText
+  properties:
+    height: 200
+    placeholder: Voer hier uw tekst in...
+    font_size: 14
+# ... rest van de bestaande code ... 
