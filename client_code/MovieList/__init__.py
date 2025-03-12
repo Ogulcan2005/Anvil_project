@@ -12,7 +12,10 @@ class MovieList(MovieListTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+  
     self.repeating_panel_1.items = app_tables.movies.search()
+    #add this line to set the event handler
+    self.repeating_panel_1.add_event_handler('x-edit-movie', self.edit_movie)
 
   def add_movie_click(self, **event_args):
     item = {}
