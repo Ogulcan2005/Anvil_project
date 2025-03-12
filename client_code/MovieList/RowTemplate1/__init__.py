@@ -15,4 +15,6 @@ class RowTemplate1(RowTemplate1Template):
 
   def edit_row_click(self, **event_args):
     self.parent.raise_event('x-edit-movie', movie=self.item)
+
+    
     

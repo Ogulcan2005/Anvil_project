@@ -10,5 +10,8 @@ class MovieEdit(MovieEditTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+  
+    self.repeating_panel_1.items = app_tables.movies.search()
+    self.repeating_panel_1.add_event_handler('x-edit-movie', self.edit_movie)
+    #add this line
 
-    # Any code you write here will run before the form opens.
