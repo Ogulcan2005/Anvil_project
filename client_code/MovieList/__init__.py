@@ -37,5 +37,3 @@ class MovieList(MovieListTemplate):
       anvil.server.call('update_movie', movie, item)
       #refresh the Data Grid
       self.repeating_panel_1.items = app_tables.movies.search()
-
-  
