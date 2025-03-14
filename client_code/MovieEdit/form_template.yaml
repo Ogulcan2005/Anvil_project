@@ -17,7 +17,7 @@ components:
   - {code: 'self.item[''year'']', property: text, writeback: true}
   layout_properties: {grid_position: 'FPCMRT,BKFNPZ'}
   name: text_box_2
-  properties: {text: '', type: number}
+  properties: {text: '', type: text}
   type: TextBox
 - layout_properties: {grid_position: 'LRMLQS,WYIAGM'}
   name: label_3

@@ -21,12 +21,10 @@ def delete_movie(movie):
     movie.delete()
 
 @anvil.server.callable
-def decode(enc):
-    key = anvil.secrets.get_secret('lickey')
+def decode(enc, key):
     dec = []
-
     enc2 = base64.urlsafe_b64decode(enc)
-
+  
     for i in range(len(enc2)):
 
         key_c = key[i % len(key)]
@@ -47,7 +45,9 @@ def decode(enc):
 
 def get_userprofiles():
   licfile = anvil.secrets.get_secret('licfile')
-  declicense = decode(licfile)
+  lickey = anvil.secrets.get_secret('lickey')
+  deckey = anvil.secrets.get_secret(('deckey'))
+  declicense = decode(licfile, lickey)
   licwords = str(declicense).split('[---]')
   sgaccount = licwords[7]
   dbconfigkey = licwords[17]
@@ -56,5 +56,23 @@ def get_userprofiles():
   client.connect()
   my_db = client['userprofiles']
   docs_found = my_db.all_docs(include_docs=True)
+  dataregels = docs_found['rows']
+  numlen = len(dataregels)
+  for index in range (0, numlen):
+    if 'doc' in dataregels[index]:
+      user_data = (dataregels[index]['doc'])
+      if 'FIRSTNAME' in user_data:
+        enc_firstname = (user_data['FIRSTNAME'])
+        enc_surname = (user_data['SURNAME'])
+        enc_email = (user_data['EMAIL'])
+        firstname = decode(enc_firstname, deckey)
+        surname = decode(enc_surname, deckey)
+        email = decode(enc_email, deckey)
+        add_info(firstname, surname, email)
+        #print(f"Voornaam: {firstname} - Achternaam: {surname} - Email: {email}")
+        
 
   return docs_found['rows']
+
+def add_info(fn, sn ,em):
+  app_tables.movies.add_row(movie_name=fn, director=sn)
