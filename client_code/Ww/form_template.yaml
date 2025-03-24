@@ -2,7 +2,7 @@ components:
 - components:
   - components:
     - name: repeating_panel_1
-      properties: {item_template: MovieList.RowTemplate1}
+      properties: {item_template: Ww.RowTemplate1}
       type: RepeatingPanel
     layout_properties: {grid_position: 'YEKWRP,THIMYH'}
     name: data_grid_1

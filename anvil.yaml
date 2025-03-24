@@ -40,5 +40,5 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/anvil/secrets.yml
-startup: {module: MovieList, type: form}
+startup: {module: Ww, type: form}
 startup_form: null

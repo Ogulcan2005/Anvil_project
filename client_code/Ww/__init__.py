@@ -1,4 +1,4 @@
-from ._anvil_designer import MovieListTemplate
+from ._anvil_designer import WwTemplate
 from anvil import *
 import anvil.server
 import anvil.tables as tables
@@ -8,7 +8,7 @@ from ..MovieEdit import MovieEdit
 
 
 
-class MovieList(MovieListTemplate):
+class Ww(WwTemplate):
     def __init__(self, **properties):
       # Set Form properties and Data Bindings.
       self.init_components(**properties)
